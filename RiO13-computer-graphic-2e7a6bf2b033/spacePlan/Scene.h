@@ -1,4 +1,7 @@
 #pragma once
+/*
+	here we will draw all our objects!
+*/
 #include "Earth.h"
 #include "Draft.h"
 #include "Player.h" 
