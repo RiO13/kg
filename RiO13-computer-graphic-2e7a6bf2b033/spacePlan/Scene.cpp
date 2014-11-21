@@ -20,6 +20,8 @@ CScene::CScene()
 	isDeawl = true;
 	m_factory.addRocket();
 	m_testRandom = (int)getRand(2000, 1000);
+	m_stars.setSpeed(0.009f);
+	m_fog.setSpeed(0.0009f);
 }
 
 
@@ -48,6 +50,13 @@ int CScene::Draw()
 {
 	glBindTexture(GL_TEXTURE_2D, helper::FON);
 	m_fon.Draw();
+
+	glBindTexture(GL_TEXTURE_2D, helper::STARS);
+	m_stars.Draw();
+
+	glBindTexture(GL_TEXTURE_2D, helper::FOG);
+	m_fog.Draw();
+
 	glBindTexture( GL_TEXTURE_2D, helper::EARTH);
 	m_earth.Draw();
 	glLoadIdentity();

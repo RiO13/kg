@@ -24,6 +24,8 @@ private:
 	std::vector<CDraft> m_drafts;
 	bool isDeawl;
 	CFon m_fon;
+	CFon m_stars;
+	CFon m_fog;
 	CEarth m_earth;
 	CPlayer m_player;
 	CRocket m_rocket;

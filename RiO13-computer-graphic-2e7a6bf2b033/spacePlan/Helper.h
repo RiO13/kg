@@ -16,7 +16,9 @@ namespace helper {
 		STEP_AL,
 		STEP_TWO_AL,
 		ROCKET,
-		ASTEROID
+		ASTEROID,
+		FOG,
+		STARS
 	};
 	static int sault = 0;
 	double static m_width = 0;
@@ -57,6 +59,14 @@ namespace helper {
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 		first.name = "cometa.png";
+		first.type = IL_PNG;
+		nameTextures.push_back(first);
+
+		first.name = "data/fog.png";
+		first.type = IL_PNG;
+		nameTextures.push_back(first);
+
+		first.name = "data/testStars.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 		for (size_t i = 0; i < nameTextures.size(); ++i)

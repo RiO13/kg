@@ -341,7 +341,7 @@ int CFramework::InitGL(GLvoid)                // Все установки касаемо OpenGL пр
 	glHint(GL_POINT_SMOOTH_HINT, GL_NICEST);  // Улучшенные точечное смешение
 	glEnable(GL_TEXTURE_2D);                 // Разрешение наложения текстуры
 	helper::fillTextures();
-	glGenTextures(10, CFramework::m_textures);
+	glGenTextures(15, CFramework::m_textures);
 
 	if (!scene.init())
 	{
