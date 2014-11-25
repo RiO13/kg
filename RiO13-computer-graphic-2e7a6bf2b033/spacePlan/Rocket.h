@@ -11,6 +11,8 @@ public:
 	GLfloat getX()const;
 	GLfloat getY()const;
 	GLuint getTime()const;
+	GLfloat getXCenter()const;
+	GLfloat getYCenter()const;
 private:
 	GLfloat m_x;
 	GLfloat m_y;

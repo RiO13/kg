@@ -39,6 +39,14 @@ void CRocket::Draw()
 
 }
 
+GLfloat CRocket::getXCenter()const
+{
+	return m_x + (1.0 / 2);
+}
+GLfloat CRocket::getYCenter()const {
+	return m_y + (1.0 / 2);
+}
+
 void CRocket::onEvent(EVENTS type)
 {
 }

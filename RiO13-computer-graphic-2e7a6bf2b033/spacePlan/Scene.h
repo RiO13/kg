@@ -6,18 +6,20 @@
 #include "Draft.h"
 #include "Player.h" 
 #include "Fon.h"
-#include "Rocket.h"
+//#include "Rocket.h"
 #include "Asteroids.h"
 #include "FactoryRocket.h"
 
 class CScene
 {
 public:
+	bool isAlive;
 	CScene();
 	~CScene();
 	int Draw();
 	void onEvent(EVENTS t);
 	bool init();
+	void CScene::collissionRocket();
 	void drawFon();
 	void collission();
 private:

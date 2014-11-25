@@ -16,10 +16,14 @@ CFon::~CFon()
 
 void CFon::Draw()
 {
-	if ((m_xP) > 19.0f)
-		m_speed = -m_speed;
-	if (m_xM < -19.0f)
-		m_speed = -m_speed;
+	if ((m_xP) > 30.0f)
+	{
+		m_xP = 12.0f;
+		m_xM = -12.0f;
+	}
+	/*if (m_xM < -19.0f)
+		m_xM = -12.0f;*/
+	//	m_speed = m_speed;
 	m_xP += m_speed;
 	m_xM += m_speed;
 	glLoadIdentity();

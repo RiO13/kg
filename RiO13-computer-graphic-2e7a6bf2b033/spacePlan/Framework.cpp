@@ -3,7 +3,7 @@
 bool CFramework::m_active = false;
 bool CFramework::m_keys[256];
 CScene CFramework::scene;
-GLuint CFramework::m_textures[10];
+GLuint CFramework::m_textures[15];
 CFramework::CFramework(LPCWSTR title, int width, int height, int bits, bool fullscreenflag, bool & error)
 {
 	GLuint    PixelFormat;              // Хранит результат после поиска
@@ -412,6 +412,10 @@ LRESULT CALLBACK CFramework::WndProc(HWND  hWnd,            // Дескриптор нужног
 								   ReSizeGLScene(LOWORD(lParam), HIWORD(lParam));  // Младшее слово=Width, старшее слово=Height
 								   return 0;            // Возвращаемся
 	}
+	}
+	if (!scene.isAlive){
+		PostQuitMessage(0);
+		return 0;
 	}
 	// пересылаем все необработанные сообщения DefWindowProc
 	return DefWindowProc(hWnd, uMsg, wParam, lParam);

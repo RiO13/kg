@@ -25,6 +25,6 @@ private:
 	bool  m_fullscreen;
 
 	CScene static scene;
-	GLuint static m_textures[10];
+	GLuint static m_textures[15];
 };
 

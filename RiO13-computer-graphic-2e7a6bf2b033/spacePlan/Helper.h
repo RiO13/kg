@@ -44,7 +44,7 @@ namespace helper {
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 		//std::string draft = "green.bmp";
-		first.name = "musor1.png";
+		first.name = "green.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 

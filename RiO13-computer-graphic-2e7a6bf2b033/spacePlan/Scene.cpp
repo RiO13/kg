@@ -13,6 +13,7 @@ static const int TIME_FOR_DRAFT = 700;
 //static const int TIME_FOR_ASTEROIDS = 400;
 CScene::CScene()
 { 
+	isAlive = true;
 	m_isActive = true;
 	m_time = 0;
 	m_timeForRocket = 0;
@@ -20,8 +21,8 @@ CScene::CScene()
 	isDeawl = true;
 	m_factory.addRocket();
 	m_testRandom = (int)getRand(2000, 1000);
-	m_stars.setSpeed(0.009f);
-	m_fog.setSpeed(0.0009f);
+	m_stars.setSpeed(0.004f);
+	m_fog.setSpeed(0.0008f);
 }
 
 
@@ -44,6 +45,7 @@ void CScene::collission()
 	
 }
  
+
 
 
 int CScene::Draw()
@@ -88,6 +90,8 @@ int CScene::Draw()
 			m_drafts[i].Draw();
 	}
 	collission();
+	if (m_factory.collissionPlayer(m_player))
+		isAlive = false;
 	m_time++;
 	m_timeForRocket++;
 	m_factory.deleteRocket();

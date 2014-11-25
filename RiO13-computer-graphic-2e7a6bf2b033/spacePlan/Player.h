@@ -21,6 +21,7 @@ public:
 	GLfloat getBottom()const;
 	GLfloat getRight()const;
 	GLfloat getLeft()const;
+	void onCollision();
 	GLfloat CPlayer::getXCenter()const;
 	GLfloat CPlayer::getYCenter()const;
 	GLfloat CPlayer::getWidth()const;

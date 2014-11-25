@@ -12,6 +12,23 @@ CFactoryRocket::~CFactoryRocket()
 }
 
 
+bool CFactoryRocket::collissionPlayer(CPlayer & player)
+{
+
+	for (size_t i = 0; i < m_rockets.size(); ++i) {
+		if (((m_rockets.at(i).getXCenter() > player.getLeft() && m_rockets.at(i).getXCenter() < player.getRight())
+			&& m_rockets.at(i).getYCenter() < player.getTop() && m_rockets.at(i).getYCenter() > player.getBottom()))
+		{
+			player.onCollision();
+			::MessageBox(NULL, "Game Over", "Game Over", MB_OK);
+			return true;
+			//::MessageBox(NULL, "testt", "test", MB_OK);
+			//m_rockets.at(i).~CRocket();
+		}
+	}
+	return false;
+}
+
 void CFactoryRocket::addRocket()
 {
 	m_rockets.push_back(CRocket());
@@ -24,7 +41,7 @@ void CFactoryRocket::deleteRocket()
 	std::vector<int> unvisibleRockets;
 	for (size_t i = 0; i < m_rockets.size(); i++)
 	{
-		if (m_rockets.at(i).getTime() > 2500)
+		if (m_rockets.at(i).getTime() > 3000)
 		{
 			unvisibleRockets.push_back(i);
 		}

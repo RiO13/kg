@@ -13,6 +13,10 @@ CPlayer::CPlayer()
 }
 
 
+void CPlayer::onCollision()
+{
+
+}
 CPlayer::~CPlayer()
 {
 }
