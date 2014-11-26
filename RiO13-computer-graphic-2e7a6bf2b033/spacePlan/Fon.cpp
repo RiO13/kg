@@ -43,10 +43,10 @@ void CFon::Draw()
 	glBegin(GL_QUADS);                      // Рисуем куб
 	//glColor3f(0.0f, 1.0f, 0.0f);              // Синий
 	// Передняя грань
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(m_xM, -12, 1.0f);	// Низ лево
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(m_xP, -12, 1.0f);	// Низ право
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(m_xP, 12, 1.0f);	// Верх право
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(m_xM, 12, 1.0f);	// Верх лево
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(m_xM, 12, 1.0f);	// Низ лево
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(m_xP, 12, 1.0f);	// Низ право
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(m_xP, -12, 1.0f);	// Верх право
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(m_xM, -12, 1.0f);	// Верх лево
 	glEnd();
 }
 

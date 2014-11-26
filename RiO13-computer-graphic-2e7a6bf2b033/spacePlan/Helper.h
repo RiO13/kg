@@ -34,14 +34,19 @@ namespace helper {
 	
 	static void fillTextures() {
 		Tex first;
-		first.name = "zeml.png";
+		first.name = "zeml22.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 		first.name = "alf110.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
+<<<<<<< HEAD
 		first.name = "fon101.png";
 		first.type = IL_PNG;
+=======
+		first.name = "fon101.tga";
+		first.type = IL_TGA;
+>>>>>>> origin/master
 		nameTextures.push_back(first);
 		//std::string draft = "green.bmp";
 		first.name = "musor101.png";
@@ -62,11 +67,19 @@ namespace helper {
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 
+<<<<<<< HEAD
 		first.name = "fon103.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 
 		first.name = "fon102.png";
+=======
+		first.name = "data/fon22.png";
+		first.type = IL_PNG;
+		nameTextures.push_back(first);
+
+		first.name = "data/fon33.png";
+>>>>>>> origin/master
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 		for (size_t i = 0; i < nameTextures.size(); ++i)
