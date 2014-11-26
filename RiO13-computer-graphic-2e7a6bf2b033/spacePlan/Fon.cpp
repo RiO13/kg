@@ -14,13 +14,25 @@ CFon::~CFon()
 }
 
 
+
+
+void CFon::setMx(GLfloat mX)
+{
+	m_xM = mX;
+}
+void CFon::setPx(GLfloat pX)
+{
+	m_xP = pX;
+}
 void CFon::Draw()
 {
-	if ((m_xP) > 30.0f)
+	if ((m_xP) > 50.0f)
 	{
-		m_xP = 12.0f;
-		m_xM = -12.0f;
+		m_xP = -3.0f;
+		m_xM = -27.0f;
 	}
+
+
 	/*if (m_xM < -19.0f)
 		m_xM = -12.0f;*/
 	//	m_speed = m_speed;
@@ -52,4 +64,16 @@ void CFon::setSpeed(GLfloat speed)
 GLfloat CFon::getSpeed()const
 {
 	return m_speed;
+}
+
+
+
+GLfloat CFon::getMx()const
+{
+	return m_xM;
+}
+
+GLfloat CFon::getPx()const
+{
+	return m_xP;
 }

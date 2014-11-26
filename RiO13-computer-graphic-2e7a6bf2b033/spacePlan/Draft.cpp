@@ -1,6 +1,6 @@
 #include "Draft.h"
 
-
+static float SIZE_TRASH	 = 0.4f;
 CDraft::CDraft(GLfloat x, GLfloat y )
 {
 	m_x = x;
@@ -26,10 +26,10 @@ void CDraft::Draw()
 	glBegin(GL_QUADS);                      // Рисуем куб
 	//glColor3f(0.0f, 1.0f, 0.0f);              // Синий
 	// Передняя грань
-	glTexCoord2f(0.0f, 0.0f); glVertex3f(-0.2f + m_x, -0.2f + m_y, 1.0f);	// Низ лево
-	glTexCoord2f(1.0f, 0.0f); glVertex3f(0.2f + m_x, -0.2f + m_y, 1.0f);	// Низ право
-	glTexCoord2f(1.0f, 1.0f); glVertex3f(0.2f + m_x, 0.2f + m_y, 1.0f);	// Верх право
-	glTexCoord2f(0.0f, 1.0f); glVertex3f(-0.2f + m_x, 0.2f + m_y, 1.0f);	// Верх лево
+	glTexCoord2f(0.0f, 0.0f); glVertex3f(-SIZE_TRASH + m_x, -SIZE_TRASH + m_y -0.1, 1.0f);	// Низ лево
+	glTexCoord2f(1.0f, 0.0f); glVertex3f(SIZE_TRASH + m_x, -SIZE_TRASH + m_y - 0.1, 1.0f);	// Низ право
+	glTexCoord2f(1.0f, 1.0f); glVertex3f(SIZE_TRASH + m_x, SIZE_TRASH + m_y + 0.1, 1.0f);	// Верх право
+	glTexCoord2f(0.0f, 1.0f); glVertex3f(-SIZE_TRASH + m_x, SIZE_TRASH + m_y + 0.1, 1.0f);	// Верх лево
 	glEnd();
 	m_time++;
 	if (m_time == 600)
@@ -80,28 +80,28 @@ bool CDraft::isAlive()const {
 
 GLfloat CDraft::getTop()const
 {
-	return m_y + 0.2f;
+	return m_y + SIZE_TRASH;
 }
 GLfloat CDraft::getBottom()const{
-	return m_y - 0.2f;
+	return m_y - SIZE_TRASH;
 }
 GLfloat CDraft::getRight()const{
-	return m_x + 0.2f;
+	return m_x + SIZE_TRASH;
 }
 GLfloat CDraft::getLeft()const{
-	return m_x - 0.2f;
+	return m_x - SIZE_TRASH;
 }
 GLfloat CDraft::getXCenter()const
 {
-	return m_x + ( 0.4 / 2);
+	return m_x + (SIZE_TRASH / 2);
 }
 GLfloat CDraft::getYCenter()const {
-	return m_y + (0.4 / 2);
+	return m_y + (SIZE_TRASH / 2);
 }
 
 GLfloat CDraft::getWidth()const {
-	return 0.4;
+	return SIZE_TRASH;
 }
 GLfloat CDraft::getHeight()const {
-	return 0.4;
+	return SIZE_TRASH;
 }

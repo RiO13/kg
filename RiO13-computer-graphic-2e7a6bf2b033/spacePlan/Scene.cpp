@@ -22,7 +22,13 @@ CScene::CScene()
 	m_factory.addRocket();
 	m_testRandom = (int)getRand(2000, 1000);
 	m_stars.setSpeed(0.004f);
+	m_stars.setMx(-12.0f);
+	m_stars.setPx(12.0f);
 	m_fog.setSpeed(0.0008f);
+	m_back.setSpeed(0.004f);
+	m_back.setMx(-36.0f);
+	m_back.setPx(-12.0f);
+	m_isDrawing = true;
 }
 
 
@@ -54,8 +60,21 @@ int CScene::Draw()
 	m_fon.Draw();
 
 	glBindTexture(GL_TEXTURE_2D, helper::STARS);
-	m_stars.Draw();
+	if (m_stars.getPx() > 30.0f)
+	{
+		m_stars.setMx(-30.0f);
+		m_stars.setPx(-6.0f);
 
+	}
+	if (m_back.getPx() > 30.0f)
+	{
+		m_back.setMx(-30.0f);
+		m_back.setPx(-6.0f);
+
+	}
+	m_stars.Draw();
+	m_back.Draw();
+	//m_back.Draw();
 	glBindTexture(GL_TEXTURE_2D, helper::FOG);
 	m_fog.Draw();
 

@@ -115,11 +115,11 @@ void CPlayer::onLeft()
 	default:
 		break;
 	}
-	m_cubeAngle += M_PI / 120;
+	m_cubeAngle += M_PI / 140;
 }
 void CPlayer::onUp()
 {
-	m_cubeRadius += 0.1;
+	m_cubeRadius += 0.05;
 	m_delta = 0.0001;
 	if (m_cubeRadius > MAX_RADIUS)
 	{
@@ -128,7 +128,7 @@ void CPlayer::onUp()
 }
 void CPlayer::onDown()
 {
-	m_cubeRadius -= 0.1;
+	m_cubeRadius -= 0.05;
 	m_delta = -0.0001;
 	if (m_cubeRadius < MIN_RADIUS)
 	{
@@ -153,7 +153,7 @@ void CPlayer::onRight()
 	default:
 		break;
 	}
-	m_cubeAngle -= M_PI / 120;
+	m_cubeAngle -= M_PI / 140;
 }
 
 GLfloat CPlayer::getTop()const

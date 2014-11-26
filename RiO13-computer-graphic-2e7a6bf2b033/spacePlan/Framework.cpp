@@ -4,6 +4,8 @@ bool CFramework::m_active = false;
 bool CFramework::m_keys[256];
 CScene CFramework::scene;
 GLuint CFramework::m_textures[15];
+GLuint CFramework::m_mouseX = 0;
+GLuint CFramework::m_mouseY = 0;
 CFramework::CFramework(LPCWSTR title, int width, int height, int bits, bool fullscreenflag, bool & error)
 {
 	GLuint    PixelFormat;              // Хранит результат после поиска
@@ -194,22 +196,22 @@ int CFramework::EnterMsgLoop()
 					if (m_keys[VK_UP])
 					{
 						scene.onEvent(EVENTS::PRESS_UP_BUTTON);
-						m_keys[VK_UP] = false;
+					//	m_keys[VK_UP] = false;
 					}
 					if (m_keys[VK_DOWN])
 					{
 						scene.onEvent(EVENTS::PRESS_DOWN_BUTTON);
-						m_keys[VK_DOWN] = false;
+						//m_keys[VK_DOWN] = false;
 					}
 					if (m_keys[VK_LEFT])
 					{
 						scene.onEvent(EVENTS::PRESS_LEFT_BUTTON);
-						m_keys[VK_LEFT] = false;
+						//m_keys[VK_LEFT] = false;
 					}
 					if (m_keys[VK_RIGHT])
 					{
 						scene.onEvent(EVENTS::PRESS_RIGHT_BUTTON);
-						m_keys[VK_RIGHT] = false;
+						//m_keys[VK_RIGHT] = false;
 					}
 					if (m_keys[VK_NUMPAD8])
 					{
@@ -411,6 +413,29 @@ LRESULT CALLBACK CFramework::WndProc(HWND  hWnd,            // Дескриптор нужног
 	{
 								   ReSizeGLScene(LOWORD(lParam), HIWORD(lParam));  // Младшее слово=Width, старшее слово=Height
 								   return 0;            // Возвращаемся
+	}
+	case WM_MOUSEMOVE: {
+		//POINT Mouse;//объявление структуры
+		//// гдето в winMain()
+		//GetCursorPos(&Mouse);
+		//if (std::abs((float)CFramework::m_mouseY) - std::abs(Mouse.y) < 0)
+		//{
+		//	PostMessage(hWnd, WM_KEYDOWN, VK_DOWN, VK_DOWN);
+		//}
+		//else
+		//{
+		//	PostMessage(hWnd, WM_KEYDOWN, VK_UP, VK_UP);
+		//}
+		//if (std::abs((float)CFramework::m_mouseX) - std::abs(Mouse.x) < 0)
+		//{
+		//	PostMessage(hWnd, WM_KEYDOWN, VK_LEFT, VK_LEFT);
+		//}
+		//else{
+		//	PostMessage(hWnd, WM_KEYDOWN, VK_RIGHT, VK_RIGHT);
+		//}
+		//CFramework::m_mouseX  = Mouse.x;
+		//CFramework::m_mouseY = Mouse.y;
+		return 0;
 	}
 	}
 	if (!scene.isAlive){

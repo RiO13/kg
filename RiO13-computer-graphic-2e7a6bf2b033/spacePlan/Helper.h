@@ -37,14 +37,14 @@ namespace helper {
 		first.name = "zeml.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
-		first.name = "alfred2.png";
+		first.name = "alf110.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
-		first.name = "fon2.png";
+		first.name = "fon101.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 		//std::string draft = "green.bmp";
-		first.name = "green.png";
+		first.name = "musor101.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 
@@ -62,11 +62,11 @@ namespace helper {
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 
-		first.name = "data/fog.png";
+		first.name = "fon103.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 
-		first.name = "data/testStars.png";
+		first.name = "fon102.png";
 		first.type = IL_PNG;
 		nameTextures.push_back(first);
 		for (size_t i = 0; i < nameTextures.size(); ++i)

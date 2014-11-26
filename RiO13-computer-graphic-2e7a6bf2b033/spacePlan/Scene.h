@@ -28,6 +28,8 @@ private:
 	CFon m_fon;
 	CFon m_stars;
 	CFon m_fog;
+	bool m_isDrawing;
+	CFon m_back;
 	CEarth m_earth;
 	CPlayer m_player;
 	CRocket m_rocket;

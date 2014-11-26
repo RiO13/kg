@@ -19,6 +19,8 @@ private:
 	bool static m_active;
 	bool static m_keys[256];
 	HGLRC m_hRC;              // Постоянный контекст рендеринга
+	static GLuint m_mouseX;
+	static GLuint m_mouseY;
 	HDC m_hDC;              // Приватный контекст устройства GDI
 	HWND m_hWnd;              // Здесь будет хранится дескриптор окна
 	HINSTANCE m_hInstance;              // Здесь будет хранится дескриптор приложения
